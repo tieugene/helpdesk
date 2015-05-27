@@ -1,0 +1,13 @@
+DEBUG = True
+#DEBUG = False
+
+STATIC_URL = '/static_helpdesk/'
+MEDIA_ROOT = '/mnt/shares/tmp/helpdesk/'
+LOGIN_URL = '/helpdesk/accounts/login/'
+DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': '/mnt/shares/tmp/helpdesk.db'}}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'unix:/tmp/memcached.sock',
+    }
+}
